@@ -13,6 +13,11 @@
 		810FF2BA2E68160200099BE7 /* EffectiveMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 810FF2B22E68160200099BE7 /* EffectiveMobile.xcdatamodeld */; };
 		810FF2BB2E68160200099BE7 /* EffectiveMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FF2B32E68160200099BE7 /* EffectiveMobileApp.swift */; };
 		810FF2BC2E68160200099BE7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FF2B42E68160200099BE7 /* Persistence.swift */; };
+		818889222E68198D006F6BC5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818889212E68198B006F6BC5 /* ViewModel.swift */; };
+		819D97FA2E6846C1006EAA6A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 819D97F92E6846C1006EAA6A /* Localizable.xcstrings */; };
+		819D97FC2E687153006EAA6A /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D97FB2E68714D006EAA6A /* DateFormatter+Extension.swift */; };
+		819D97FE2E68B320006EAA6A /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D97FD2E68B320006EAA6A /* EditorView.swift */; };
+		819D98002E68B6BD006EAA6A /* ShareSheetRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D97FF2E68B6B5006EAA6A /* ShareSheetRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		810FF2B32E68160200099BE7 /* EffectiveMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveMobileApp.swift; sourceTree = "<group>"; };
 		810FF2B42E68160200099BE7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		810FF2B62E68160200099BE7 /* EffectiveMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EffectiveMobile.xcdatamodel; sourceTree = "<group>"; };
+		818889212E68198B006F6BC5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		819D97F92E6846C1006EAA6A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		819D97FB2E68714D006EAA6A /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		819D97FD2E68B320006EAA6A /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		819D97FF2E68B6B5006EAA6A /* ShareSheetRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +74,66 @@
 			isa = PBXGroup;
 			children = (
 				810FF2AF2E68160200099BE7 /* Preview Content */,
+				819D97F92E6846C1006EAA6A /* Localizable.xcstrings */,
 				810FF2B02E68160200099BE7 /* Assets.xcassets */,
-				810FF2B12E68160200099BE7 /* ContentView.swift */,
-				810FF2B22E68160200099BE7 /* EffectiveMobile.xcdatamodeld */,
-				810FF2B32E68160200099BE7 /* EffectiveMobileApp.swift */,
+				819D98022E68B6E8006EAA6A /* Extensions */,
+				819D98012E68B6DD006EAA6A /* View */,
+				819D98042E68B724006EAA6A /* Interactor */,
+				819D98072E68B73A006EAA6A /* Presenter */,
+				819D98032E68B708006EAA6A /* Entity */,
+				819D980A2E68B756006EAA6A /* Router */,
+				818889212E68198B006F6BC5 /* ViewModel.swift */,
 				810FF2B42E68160200099BE7 /* Persistence.swift */,
 			);
 			path = EffectiveMobile;
+			sourceTree = "<group>";
+		};
+		819D98012E68B6DD006EAA6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				810FF2B12E68160200099BE7 /* ContentView.swift */,
+				819D97FD2E68B320006EAA6A /* EditorView.swift */,
+				819D97FF2E68B6B5006EAA6A /* ShareSheetRepresentable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		819D98022E68B6E8006EAA6A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				819D97FB2E68714D006EAA6A /* DateFormatter+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		819D98032E68B708006EAA6A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				810FF2B22E68160200099BE7 /* EffectiveMobile.xcdatamodeld */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		819D98042E68B724006EAA6A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		819D98072E68B73A006EAA6A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		819D980A2E68B756006EAA6A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				810FF2B32E68160200099BE7 /* EffectiveMobileApp.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +179,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 810FF28F2E6815F500099BE7;
 			minimizedProjectReferenceProxies = 1;
@@ -136,6 +200,7 @@
 			files = (
 				810FF2B72E68160200099BE7 /* Preview Assets.xcassets in Resources */,
 				810FF2B82E68160200099BE7 /* Assets.xcassets in Resources */,
+				819D97FA2E6846C1006EAA6A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818889222E68198D006F6BC5 /* ViewModel.swift in Sources */,
 				810FF2B92E68160200099BE7 /* ContentView.swift in Sources */,
+				819D97FC2E687153006EAA6A /* DateFormatter+Extension.swift in Sources */,
+				819D97FE2E68B320006EAA6A /* EditorView.swift in Sources */,
 				810FF2BA2E68160200099BE7 /* EffectiveMobile.xcdatamodeld in Sources */,
 				810FF2BB2E68160200099BE7 /* EffectiveMobileApp.swift in Sources */,
+				819D98002E68B6BD006EAA6A /* ShareSheetRepresentable.swift in Sources */,
 				810FF2BC2E68160200099BE7 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +284,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -271,6 +341,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
