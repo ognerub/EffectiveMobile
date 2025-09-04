@@ -12,12 +12,15 @@
 		810FF2B92E68160200099BE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FF2B12E68160200099BE7 /* ContentView.swift */; };
 		810FF2BA2E68160200099BE7 /* EffectiveMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 810FF2B22E68160200099BE7 /* EffectiveMobile.xcdatamodeld */; };
 		810FF2BB2E68160200099BE7 /* EffectiveMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FF2B32E68160200099BE7 /* EffectiveMobileApp.swift */; };
-		810FF2BC2E68160200099BE7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FF2B42E68160200099BE7 /* Persistence.swift */; };
+		810FF2BC2E68160200099BE7 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FF2B42E68160200099BE7 /* PersistenceController.swift */; };
 		818889222E68198D006F6BC5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818889212E68198B006F6BC5 /* ViewModel.swift */; };
 		819D97FA2E6846C1006EAA6A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 819D97F92E6846C1006EAA6A /* Localizable.xcstrings */; };
 		819D97FC2E687153006EAA6A /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D97FB2E68714D006EAA6A /* DateFormatter+Extension.swift */; };
 		819D97FE2E68B320006EAA6A /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D97FD2E68B320006EAA6A /* EditorView.swift */; };
 		819D98002E68B6BD006EAA6A /* ShareSheetRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D97FF2E68B6B5006EAA6A /* ShareSheetRepresentable.swift */; };
+		819D98162E69F532006EAA6A /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D98152E69F52D006EAA6A /* NoteModel.swift */; };
+		819D981A2E69FB6F006EAA6A /* todos.json in Resources */ = {isa = PBXBuildFile; fileRef = 819D98192E69FB6F006EAA6A /* todos.json */; };
+		819D981C2E6A023C006EAA6A /* TodoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D981B2E6A023C006EAA6A /* TodoLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +29,17 @@
 		810FF2B02E68160200099BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		810FF2B12E68160200099BE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		810FF2B32E68160200099BE7 /* EffectiveMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveMobileApp.swift; sourceTree = "<group>"; };
-		810FF2B42E68160200099BE7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		810FF2B42E68160200099BE7 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		810FF2B62E68160200099BE7 /* EffectiveMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EffectiveMobile.xcdatamodel; sourceTree = "<group>"; };
 		818889212E68198B006F6BC5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		819D97F92E6846C1006EAA6A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		819D97FB2E68714D006EAA6A /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		819D97FD2E68B320006EAA6A /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		819D97FF2E68B6B5006EAA6A /* ShareSheetRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetRepresentable.swift; sourceTree = "<group>"; };
+		819D98152E69F52D006EAA6A /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		819D98192E69FB6F006EAA6A /* todos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = todos.json; sourceTree = "<group>"; };
+		819D981B2E6A023C006EAA6A /* TodoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoLoader.swift; sourceTree = "<group>"; };
+		819D981F2E6A0885006EAA6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +80,17 @@
 		810FF2B52E68160200099BE7 /* EffectiveMobile */ = {
 			isa = PBXGroup;
 			children = (
+				819D981F2E6A0885006EAA6A /* Info.plist */,
 				810FF2AF2E68160200099BE7 /* Preview Content */,
 				819D97F92E6846C1006EAA6A /* Localizable.xcstrings */,
 				810FF2B02E68160200099BE7 /* Assets.xcassets */,
+				819D98192E69FB6F006EAA6A /* todos.json */,
 				819D98022E68B6E8006EAA6A /* Extensions */,
 				819D98012E68B6DD006EAA6A /* View */,
 				819D98042E68B724006EAA6A /* Interactor */,
 				819D98072E68B73A006EAA6A /* Presenter */,
 				819D98032E68B708006EAA6A /* Entity */,
 				819D980A2E68B756006EAA6A /* Router */,
-				818889212E68198B006F6BC5 /* ViewModel.swift */,
-				810FF2B42E68160200099BE7 /* Persistence.swift */,
 			);
 			path = EffectiveMobile;
 			sourceTree = "<group>";
@@ -109,6 +116,7 @@
 		819D98032E68B708006EAA6A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				819D98152E69F52D006EAA6A /* NoteModel.swift */,
 				810FF2B22E68160200099BE7 /* EffectiveMobile.xcdatamodeld */,
 			);
 			path = Entity;
@@ -117,6 +125,8 @@
 		819D98042E68B724006EAA6A /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				819D981B2E6A023C006EAA6A /* TodoLoader.swift */,
+				810FF2B42E68160200099BE7 /* PersistenceController.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -124,6 +134,7 @@
 		819D98072E68B73A006EAA6A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				818889212E68198B006F6BC5 /* ViewModel.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -201,6 +212,7 @@
 				810FF2B72E68160200099BE7 /* Preview Assets.xcassets in Resources */,
 				810FF2B82E68160200099BE7 /* Assets.xcassets in Resources */,
 				819D97FA2E6846C1006EAA6A /* Localizable.xcstrings in Resources */,
+				819D981A2E69FB6F006EAA6A /* todos.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,11 +226,13 @@
 				818889222E68198D006F6BC5 /* ViewModel.swift in Sources */,
 				810FF2B92E68160200099BE7 /* ContentView.swift in Sources */,
 				819D97FC2E687153006EAA6A /* DateFormatter+Extension.swift in Sources */,
+				819D98162E69F532006EAA6A /* NoteModel.swift in Sources */,
 				819D97FE2E68B320006EAA6A /* EditorView.swift in Sources */,
 				810FF2BA2E68160200099BE7 /* EffectiveMobile.xcdatamodeld in Sources */,
 				810FF2BB2E68160200099BE7 /* EffectiveMobileApp.swift in Sources */,
+				819D981C2E6A023C006EAA6A /* TodoLoader.swift in Sources */,
 				819D98002E68B6BD006EAA6A /* ShareSheetRepresentable.swift in Sources */,
-				810FF2BC2E68160200099BE7 /* Persistence.swift in Sources */,
+				810FF2BC2E68160200099BE7 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +371,9 @@
 				DEVELOPMENT_TEAM = Q9BL3YJ6S3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EffectiveMobile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -386,9 +400,9 @@
 				DEVELOPMENT_TEAM = Q9BL3YJ6S3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EffectiveMobile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

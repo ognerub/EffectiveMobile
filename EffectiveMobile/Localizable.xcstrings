@@ -54,10 +54,24 @@
       }
     },
     "Добавьте название" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add note name"
+          }
+        }
+      }
     },
     "Добавьте описание" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add note description"
+          }
+        }
+      }
     },
     "Задачи" : {
       "localizations" : {

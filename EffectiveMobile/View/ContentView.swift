@@ -14,13 +14,17 @@ struct ContentView: View {
 
     @StateObject private var viewModel: ViewModel
 
+    @AppStorage("isFirstStart") private var isFirstStart: Bool = true
+
     @State private var isShareSheetPresented: Bool = false
 
     private var viewWidth = CGFloat.zero
 
-    init() {
-        let context = PersistenceController.shared.container.viewContext
-        _viewModel = StateObject(wrappedValue: ViewModel(context: context))
+    init(context: NSManagedObjectContext, loader: Loader) {
+        _viewModel = StateObject(wrappedValue: ViewModel(
+            context: context,
+            loader: loader)
+        )
         setupAppearence()
     }
 
@@ -109,6 +113,12 @@ struct ContentView: View {
                 }
             }
         .preferredColorScheme(.dark)
+        .onAppear() {
+            if isFirstStart {
+                isFirstStart = false
+                viewModel.getNotes()
+            }
+        }
     }
 
     private var bottomBar: some View {
@@ -148,5 +158,8 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(
+        context: PersistenceController().container.viewContext,
+        loader: Loader()
+    )
 }

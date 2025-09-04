@@ -10,7 +10,9 @@ import CoreData
 
 final class ViewModel: ObservableObject {
 
+    // MARK: Properties
     private let viewContext: NSManagedObjectContext
+    private weak var loader: Loader?
     private let defaultHeader = "Заметка без имени"
     private let defaultBody = "Описание отсутсвует"
 
@@ -28,11 +30,14 @@ final class ViewModel: ObservableObject {
     @Published var items: [Item] = []
     @Published var isLoading = false
 
-    init(context: NSManagedObjectContext) {
+    // MARK: Init
+    init(context: NSManagedObjectContext, loader: Loader) {
         self.viewContext = context
+        self.loader = loader
         self.fetchItems()
     }
 
+    // MARK: Interface
     func getFilteredItems() -> [Item] {
         guard !searchText.isEmpty else {
             return items
@@ -109,7 +114,25 @@ final class ViewModel: ObservableObject {
         saveContext()
     }
 
-    private func saveContext() {
+    func getNotes() {
+        loader?.loadTodos(completion: { [weak self] result in
+            guard let self else { return }
+            result.forEach({ result in
+                let newItem = Item(context: self.viewContext)
+                newItem.timestamp = Date()
+                newItem.id = UUID()
+                newItem.header = "Локальная заметка #\(result.id)"
+                newItem.body = result.todo
+                newItem.status = result.completed
+            })
+            self.saveContext()
+        })
+    }
+}
+
+// MARK: - Private logic
+private extension ViewModel {
+    func saveContext() {
         do {
             try viewContext.save()
             fetchItems()
@@ -118,7 +141,7 @@ final class ViewModel: ObservableObject {
         }
     }
 
-    private func findItem(by id: UUID?) -> Item? {
+    func findItem(by id: UUID?) -> Item? {
         guard let id else { return nil }
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         request.predicate = NSPredicate(format: "id == %@", id as CVarArg)

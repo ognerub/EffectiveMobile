@@ -9,11 +9,12 @@ import SwiftUI
 
 @main
 struct EffectiveMobileApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = PersistenceController()
+    let loader = Loader()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(context: persistenceController.container.viewContext, loader: loader)
         }
     }
 }

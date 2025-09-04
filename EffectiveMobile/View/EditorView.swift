@@ -128,7 +128,3 @@ struct EditorView: View {
         }
     }
 }
-
-#Preview {
-    return ContentView()
-}

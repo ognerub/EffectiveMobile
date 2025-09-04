@@ -1,5 +1,5 @@
 //
-//  Persistence.swift
+//  PersistenceController.swift
 //  EffectiveMobile
 //
 //  Created by Alexander Ognerubov on 03.09.2025.
@@ -8,8 +8,6 @@
 import CoreData
 
 struct PersistenceController {
-    static let shared = PersistenceController()
-
     @MainActor
     static let preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
